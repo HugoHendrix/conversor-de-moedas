@@ -4,7 +4,7 @@
 
 
 # Link da AULA
-50min
+1:16
 https://lp.b7web.com.br/aulajs-v
 
 
