@@ -4,7 +4,7 @@
 
 
 # Link da AULA
-33min
+50min
 https://lp.b7web.com.br/aulajs-v
 
 
@@ -18,5 +18,9 @@ https://lp.b7web.com.br/aulajs-v
     - Como criar e usar Arrays e objetos?    
     - Como pegar um item do Array?
 - Concatenações
+- Objetos em JS. Caracteristicas do objeto, Na programação, os objetos também ter que ter suas caracteristicas, as caracteristicas são conhecidas como propriedades.
+  - Como acesssar ojetos e ver suas propriedades
+- Funções no JS
+  - O que é uma função e para que serve?
 
 
