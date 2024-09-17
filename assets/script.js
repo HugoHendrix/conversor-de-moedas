@@ -3,6 +3,7 @@ let idade = 34              // Tipo Number
 let nome = "Hugo Hendrix"   // Tipo String
 let logado = true           // Tipo Boolean
 
+
 // Arrays devem ser abertos utilizando os cochetes, eles aceitam vários tipos de dados e começam com index no zero, 0, 1, 2 e 3
 //Caso seja inserido um número que não tem no array, o console log vai mostrar undefined, ou seja, não foi definida.
 let ingredientes = ["farinha", "água", "sal", "corante"]
@@ -40,3 +41,48 @@ console.log(resultadoSomar)
 // Nesse caso  podemos usar a função quantas vezes forem necessárias, bastando apenas chamar ela, somar(). Não sendo necessário escrever uma nova função.
 let resultadoSomar2 = somar(30, 30)
 console.log(resultadoSomar2)
+
+
+// Criando a sema função de somar, mas com a estrutura da arrow function
+
+// Dessa maneira a variável, já se torna uma função
+let somar2 = (numeroA, numeroB) => {
+    resultado = numeroA + numeroB;
+    return resultado
+
+}
+
+let x = somar(15, 15)
+let y = somar2(20, 20)
+
+console.log(x)
+console.log(y)
+
+
+if ( idade >= 18 ) {
+    console.log("Você é maior de idade")
+} else {
+    console.log("Você é menor de iddade")
+}
+
+let lista = ["Goku", "Naruto", "Luffy" , "Yusuke"]
+
+
+//Aqui foi criado uma estrutura de repetição usando o for, dentro uma variavel com nome de lista e of vai dar o loop na varirável lista e vai armazenaro item detro da variavel chamada item
+
+//Para pegar um item especifico do loop, usamos os números começando do zero, igual nos arrays
+for(let item of lista) {
+    console.log(item)
+}
+
+// Eventos
+// exemplo com named function
+function avisar(){
+    alert("Opa, deu certo")
+}
+
+//exemplo com arrow function, no html foi criado um botão com onclick -     <button onclick="avisar2()">Clique aqui</button>  No caso, para acionar esse evento, basta clicar e trocar o nome caso queira
+
+let = avisar2 = () => {
+    alert ("Você foi avisado")
+}

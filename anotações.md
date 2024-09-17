@@ -22,5 +22,15 @@ https://lp.b7web.com.br/aulajs-v
   - Como acesssar ojetos e ver suas propriedades
 - Funções no JS
   - O que é uma função e para que serve?
+  - O que é arrow function, qual a diferença entre named function e para que serve? 
+- Estrutura condicionais if/else
+- Atribuições = (atribuição), ==(comparacao), ===(comparacao estrita), != (diferente de), > (maior que), < (menor que), >= (maior ou igual), <= (menor ou igual)
+- Estrutura de repetição Loop
+  - for - No exemplo foi feito uma estrutura de repetição com base em uma lista
+- Event handling - gerenciador de eventos
+  - O que é um evento no JS, para que serve?
 
+
+
+# Para cada item da pesquisa, procure um valor prático.
 
