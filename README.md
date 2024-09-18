@@ -1,4 +1,7 @@
-![alt text](image-3.png)
+<div align="center">
+  <img src="https://github.com/HugoHendrix/conversor-de-moedas/blob/master/image-3.png?raw=true" alt="Descrição da imagem" width="300" style="border-radius: 10px; border: 2px solid black;">
+</div>
+
 
 
 # Conversor de Moedas USD/BRL
