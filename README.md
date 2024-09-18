@@ -1,4 +1,4 @@
-![alt text](image-2.png)
+![alt text](image-3.png)
 
 
 # Conversor de Moedas USD/BRL
