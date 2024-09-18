@@ -1,88 +1,63 @@
-//Tipos de variáveis
-let idade = 34              // Tipo Number
-let nome = "Hugo Hendrix"   // Tipo String
-let logado = true           // Tipo Boolean
+let dollar = 5.1;
 
+let usdInput = document.querySelector("#usd");
+let brlInput = document.querySelector("#brl");
 
-// Arrays devem ser abertos utilizando os cochetes, eles aceitam vários tipos de dados e começam com index no zero, 0, 1, 2 e 3
-//Caso seja inserido um número que não tem no array, o console log vai mostrar undefined, ou seja, não foi definida.
-let ingredientes = ["farinha", "água", "sal", "corante"]
+usdInput.addEventListener("keyup", () => {
+    convert("usd-to-brl");
+});
 
-//Mostra a quantidade de itens dentro do Array e o seu conteúdo
-console.log(ingredientes)
+brlInput.addEventListener("keyup", () => {
+    convert("brl-to-usd");
+});
 
-//Para exibir um item do Array, vai exibir farinha. Para arrays são necessários os colchetes []
-console.log(ingredientes[0])
+usdInput.addEventListener("blur", () => {
+    usdInput.value = formatCurrency(usdInput.value);
+});
 
-//Objetos, por exemplo, em um jogo, um personagem tem caracteristicas/propriedades. Para Objetos usamos as chaves {} e não se usa caracteres especiais, por exemplo força. Use forca
-let personagem = {
-    nome: "Guerreiro",
-    nivel: 10,
-    forca: 800,
-    magia: 200,
-    vida: 1000,
-    mana: 200
-}
-// A combinação de arrays e objetos são muito pooderosas, por exemplo, podemos ter um array e aos inveis de farinha, ter um objeto, que por sua vez tem suas propriedades.
-// Como acessar o objeto e ver as propriedades.
-console.log(personagem.forca) // no caso o nome do objeto + um ponto e o nome da propriedade
+brlInput.addEventListener("blur", () => {
+    brlInput.value = formatCurrency(brlInput.value); 
+});
 
-//Funções no JS
-//Funções são blocos de códigos que ficam parados e executados somente quando necessário (chamado)
-// Por exemplo, podemos fazer uma função que soma números, número A e número B. Os números são INPUTS, a função processa a soma e o OUTPUT é o resultado da função.
+usdInput.value = "1000,00";
+convert("usd-to-brl");
 
-function somar(numeroA, numeroB){
-    resultado = numeroA + numeroB;
-    return resultado
-}
-let resultadoSomar  = somar(15, 15)
-console.log(resultadoSomar)
-
-// Nesse caso  podemos usar a função quantas vezes forem necessárias, bastando apenas chamar ela, somar(). Não sendo necessário escrever uma nova função.
-let resultadoSomar2 = somar(30, 30)
-console.log(resultadoSomar2)
-
-
-// Criando a sema função de somar, mas com a estrutura da arrow function
-
-// Dessa maneira a variável, já se torna uma função
-let somar2 = (numeroA, numeroB) => {
-    resultado = numeroA + numeroB;
-    return resultado
-
+// Funções
+function formatCurrency(value) {
+    let fixedValue = fixValue(value);
+    let options = {
+        useGrouping: false,
+        minimumFractionDigits: 2 
+    };
+    let formatter = new Intl.NumberFormat("pt-BR", options);
+    return formatter.format(fixedValue);
 }
 
-let x = somar(15, 15)
-let y = somar2(20, 20)
+function fixValue(value) {
+    let fixedValue = value.replace(",", "."); // Ajusta o valor
+    let floatValue = parseFloat(fixedValue); // Utiliza função de formatar
 
-console.log(x)
-console.log(y)
-
-
-if ( idade >= 18 ) {
-    console.log("Você é maior de idade")
-} else {
-    console.log("Você é menor de iddade")
+    // Verifica e retorna o valor formatado
+    if (isNaN(floatValue)) { 
+        floatValue = 0;
+    }
+    return floatValue;
 }
 
-let lista = ["Goku", "Naruto", "Luffy" , "Yusuke"]
+function convert(type) {
+    if (type == "usd-to-brl") {
+        let fixedValue = fixValue(usdInput.value);
+        let result = fixedValue * dollar; 
+        result = result.toFixed(2);
 
+        brlInput.value = formatCurrency(result);
+    }
 
-//Aqui foi criado uma estrutura de repetição usando o for, dentro uma variavel com nome de lista e of vai dar o loop na varirável lista e vai armazenaro item detro da variavel chamada item
+    if (type == "brl-to-usd") {
+        let fixedValue = fixValue(brlInput.value);
+        let result = fixedValue / dollar;
+        result = result.toFixed(2);
 
-//Para pegar um item especifico do loop, usamos os números começando do zero, igual nos arrays
-for(let item of lista) {
-    console.log(item)
-}
-
-// Eventos
-// exemplo com named function
-function avisar(){
-    alert("Opa, deu certo")
-}
-
-//exemplo com arrow function, no html foi criado um botão com onclick -     <button onclick="avisar2()">Clique aqui</button>  No caso, para acionar esse evento, basta clicar e trocar o nome caso queira
-
-let = avisar2 = () => {
-    alert ("Você foi avisado")
+        usdInput.value = formatCurrency(result);
+    }
 }
