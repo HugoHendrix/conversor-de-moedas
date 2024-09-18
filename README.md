@@ -1,6 +1,6 @@
-![alt text](image.png)
+![alt text](image-1.png)
 
-```md
+
 # Conversor de Moedas USD/BRL
 
 Este projeto é um simples conversor de moedas, que permite converter valores de Dólar Americano (USD) para Real Brasileiro (BRL) e vice-versa. Ele também ajusta a formatação dos valores, substituindo o ponto por vírgula.
@@ -153,8 +153,6 @@ function convert(type) {
 
 - [Link da aula](https://lp.b7web.com.br/aulajs-v)
 
----
 
-Este projeto foi desenvolvido como parte de estudos sobre JavaScript.
-```
+
 
