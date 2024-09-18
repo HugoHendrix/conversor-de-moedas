@@ -126,6 +126,6 @@ botao.addEventListener("click", () => {
 });
 ```
 
-### Resumo prático dos tópicos
+### Agradecimentos
 
-Esses conceitos fornecem uma base para trabalhar com JavaScript, desde o entendimento de como as variáveis funcionam, passando por como estruturar e manipular dados com arrays e objetos, até a interação com o usuário através de eventos e manipulação do DOM (Document Object Model).
+ Agradeço a B7WEB e ao professor Bonieky Lacerda por disponibilizarem materiais e ensinamentos práticos que tornam o aprendizado de JavaScript acessível e eficiente!
